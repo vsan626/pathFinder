@@ -16,10 +16,17 @@ const switchNavigator = createSwitchNavigator({
     Signin: SigninScreen
   }),
   mainFlow: createBottomTabNavigator({
-    trackListFlow: createStackNavigator({
-      TrackList: TrackListScreen,
-      TrackDetail: TrackDetailScreen
-    }),
+    trackListFlow: createStackNavigator(
+      {
+        TrackList: TrackListScreen,
+        TrackDetail: TrackDetailScreen
+      },
+      {
+        defaultNavigationOptions: {
+          title: ''
+        }
+      }
+    ),
     TrackCreate: TrackCreateScreen,
     Account: AccountScreen
   })
